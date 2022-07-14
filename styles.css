@@ -1,14 +1,24 @@
+body {
+ background-color: #f5cfb3;
+}
+
+.container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
 .display {
-  font-size: 50px;
-  font-family: cursive;
+ font-size: 50px;
+ font-family: cursive;
+ text-align: center;
 }
 
 .board {
- margin-top: 15%;
- margin-left: 35%;
+ margin-top: 100px;
  display: grid;
- grid-template-columns: 33% 33% 33%;
- grid-template-rows: 33% 33% 33%;
+ grid-template-columns: 36% 36% 36%;
+ grid-template-rows: 36% 36% 36%;
  max-width: 400px;
 }
 
@@ -23,24 +33,45 @@
  cursor: pointer;
 }
 
+.top-cell {
+ border-top-width: 5px;
+}
+
+.left-cell {
+ border-left-width: 5px;
+}
+
+.bottom-cell {
+ border-bottom-width: 5px;
+}
+
+.right-cell {
+ border-right-width: 5px;
+}
+
 .hide {
-  display: none;
+ display: none;
 }
 
 .reset-screen {
-  background-color: lightgreen;
-  color: black;
-  font-weight: bold;
-  font-family: cursive;
-  font-size: 50px;
+ color: black;
+ font-weight: bold;
+ font-family: cursive;
+ font-size: 75px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 150px;
+ text-align: center;
 }
 
 .resetBtn {
  cursor: pointer;
- margin-left: 1%;
  background-color: coral;
  color: #02028c;
- font-weight: bold;
+ font-weight: 900;
+ height: 45px;
+ width: 150px;
  padding: 10px;
  border-radius: 16px;
  border: none;
@@ -50,4 +81,23 @@
  background-color: #02028c;
  color: coral;
  border: 1px solid purple;
+}
+
+@media screen and (max-width: 768px) {
+ .reset-screen {
+  margin-top: 100px;
+ } 
+}
+
+@media screen and (max-width: 425px) {
+ .board {
+  margin-right: 20px;
+ }
+}
+
+@media screen and (max-width: 375px) {
+ .cell {
+  min-width: 90px;
+  min-height: 90px;
+ }
 }

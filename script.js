@@ -1,6 +1,6 @@
-const playerMove = (mark) => {
+const playerMove = mark => {
   return {
-    mark: mark,
+    mark,
     placeMark() {
       return `${this.mark}`;
     }
@@ -21,7 +21,7 @@ let display = document.getElementById("display");
 display.textContent = `It's ${currentPlayer.placeMark()}'s turn`;
 for (const cell of cells) {
   if (winner || draw) break;
-  cell.addEventListener('click', function(event) {
+  cell.addEventListener('click', () => {
     if (winner || draw) return;
     if (cell.textContent == '') {
       cell.textContent += currentPlayer.placeMark();
@@ -74,18 +74,15 @@ function checkWin() {
 }
 
 function checkDraw() {
-
   if (winner) return;
 
   if (cells[0].textContent != "" && cells[1].textContent != "" && cells[2].textContent != "" && cells[3].textContent != "" && cells[4].textContent != "" && cells[5].textContent != "" && cells[6].textContent != "" && cells[7].textContent != "" && cells[8].textContent != "") {
     draw = true;
     p.textContent += "It's a draw.";
   }
-
 }
 
 function resetGame() {
-  
   if (!winner && !draw) return;
 
   container.classList.add('hide');
@@ -93,7 +90,7 @@ function resetGame() {
 
   let resetBtn = document.querySelector("#resetBtn");
 
-  resetBtn.addEventListener('click', function(event) {
+  resetBtn.addEventListener('click', () => {
     for (const cell of cells) {
       cell.textContent = "";
     }
@@ -105,5 +102,4 @@ function resetGame() {
     p.textContent = "";
     container.classList.remove('hide');
   });
-
 }
